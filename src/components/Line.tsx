@@ -1,5 +1,5 @@
 import React from "react";
-import { LineTypes } from "@/constants/Types";
-export const Line = ({className}: LineTypes) => {
-  return <div className={className}></div>;
+import { lineTypes } from "../constants/types";
+export const Line = ({ variant }:lineTypes) => {
+  return <div className={variant}></div>;
 };

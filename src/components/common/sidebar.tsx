@@ -42,7 +42,7 @@ const Sidebar = () => {
         ))}
       </ul>
 
-      <Line className={"line"} />
+      <Line variant={"line"} />
 
       <ul className="bottomSidebar">
         {SiderBarData2.map((item) => (

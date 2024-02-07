@@ -4,7 +4,7 @@ export interface sidebarTypes {
     icon: JSX.Element;
   }
 
-export interface LineTypes {
-    className: string;
+export interface lineTypes {
+    variant: string;
 }
 
