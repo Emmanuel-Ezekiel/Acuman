@@ -1,5 +1,5 @@
 import { GetStarted, Analytics, Chat, Moderation, API, Announcement, Settings, Collapse, Give } from "@/assets/svgs"
-import { sidebarTypes } from "./Types"
+import { sidebarTypes } from "./types";
 
 export const SiderBarData: sidebarTypes[] = [
     {
