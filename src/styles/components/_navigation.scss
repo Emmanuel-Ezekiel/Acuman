@@ -1,0 +1,68 @@
+header {
+  width: 100%;
+  border-bottom: 1px solid rgba(83, 95, 137, 0.1);
+  padding: 22px 50px 20px 52px;
+
+  nav {
+    cursor: pointer;
+    height: 42px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+
+    h4 {
+      font-size: 16px;
+      font-weight: 400;
+      font-family: var(--font-family-Regular);
+      line-height: 24px;
+      color: #9999bc;
+    }
+
+    .left_nav {
+      height: 100%;
+      display: flex;
+      gap: 16px;
+
+      button {
+        width: 203px;
+        height: 32px;
+        padding: 4px 35px 4px 35px;
+        border-radius: 30px;
+        gap: 10px;
+        background-color: #4568d1;
+        border: none;
+        //styleName: V1/P16 - Bold;
+        font-family: var(--font-family-Bold);
+        font-size: 16px;
+        line-height: 24px;
+        font-weight: 700;
+        color: #ffffff;
+      }
+
+      .profile {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+
+        .profile_container {
+          width: 40px;
+          height: 40px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          border-radius: 50%;
+          background-color: #eceef5;
+
+          h4 {
+            font-family: var(--font-family-graphik);
+            font-size: 12px;
+            font-weight: 600;
+            line-height: 13px;
+            letter-spacing: 0.1em;
+            color: rgba(0, 0, 0, 0.4);
+          }
+        }
+      }
+    }
+  }
+}

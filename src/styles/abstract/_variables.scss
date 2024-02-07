@@ -1,0 +1,34 @@
+@font-face {
+  font-family: HankenSans-Regular;
+  src: url(../../assets/fonts/HankenSans-Regular.ttf);
+  font-display: swap;
+}
+
+@font-face {
+  font-family: HankenSans-Bold;
+  src: url(../../assets/fonts/HankenSans-Bold.ttf);
+  font-display: swap;
+}
+@font-face {
+  font-family: HankenSans-Light;
+  src: url(../../assets/fonts/HankenSans-Light.ttf);
+  font-display: swap;
+}
+@font-face {
+  font-family: Graphik-Regular;
+  src: url(../../assets/fonts/Graphik-Regular.ttf);
+  font-display: swap;
+}
+
+
+// COLORS
+:root {
+  --font-family: HankenSans-Light;
+  --font-family-bold: HankenSans-Bold;
+  --font-family-Regular: HankenSans-Regular;
+  --font-family-graphik: Graphik-Regular;
+  --color-primary: #F3F7FF;
+  --color-white: #ffffff;
+  --color-black: #000000;
+  --main-grey-01: #f8f8f9;
+}

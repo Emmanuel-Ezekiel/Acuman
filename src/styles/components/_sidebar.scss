@@ -1,0 +1,116 @@
+aside {
+  position: sticky;
+  width: 270px;
+  padding: 37px 29px;
+  background-color: #fff;
+  cursor: pointer;
+
+  .Logo_container {
+    display: flex;
+    gap: 39px;
+    align-items: flex-start;
+    width: 204px;
+    margin-left: 17px;
+    // padding-left: 17px;
+    // border: 1px solid;
+
+    .Logo_Box {
+      display: flex;
+      flex-direction: column;
+      gap: 9px;
+
+      h4 {
+        font-family: var(--font-family);
+        font-size: 12px;
+        line-height: 24px;
+        color: #8d9091;
+        font-weight: 300;
+      }
+    }
+
+    .dropdown {
+      width: 42px;
+      height: 42px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
+      background-color: #f5f7fc;
+      //   border: 1px solid #f5f7fc;
+    }
+  }
+
+  ul {
+    display: flex;
+    flex-direction: column;
+    gap: 34px;
+    margin: 42px 0 51px;
+    padding-left: 17px;
+
+    .item {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      font-family: var(--font-family);
+      font-size: 16px;
+      line-height: 24px;
+      color: #9999bc;
+      font-weight: 400;
+
+      //   svg {
+      //     path {
+      //       fill: #ea8d51;
+      //     }
+      //   }
+    }
+
+    .clicked-item {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      font-family: var(--font-family);
+      font-size: 16px;
+      line-height: 24px;
+      color: #EA8D51;
+      font-weight: 400;
+
+      svg {
+        path {
+          fill: #ea8d51;
+        }
+      }
+    }
+  }
+
+  .line {
+    width: 212px;
+    border: 1px solid rgba(211, 215, 234, 0.4);
+
+    // border: 1px solid  #D3D7EA;
+    // opacity: 0.4px;
+  }
+
+  .bottomSidebar {
+    display: flex;
+    flex-direction: column;
+    gap: 130px;
+    margin: 25px 0 51px;
+    padding-left: 17px;
+
+    li {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      font-family: var(--font-family);
+      font-size: 16px;
+      line-height: 24px;
+      font-weight: 400;
+
+      //   svg {
+      //     path {
+      //       fill: #ea8d51;
+      //     }
+      //   }
+    }
+  }
+}
