@@ -7,7 +7,7 @@ import { Line } from "../Line";
 import Link from "next/link";
 
 const Sidebar = () => {
-  const [selectedItem, setSelectedItem] = useState<number | null>(1);
+  const [selectedItem, setSelectedItem] = useState<number | null>(null);
 
   const handleItemClick = (id: number) => {
     setSelectedItem(id);

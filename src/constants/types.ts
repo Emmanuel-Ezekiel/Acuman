@@ -10,6 +10,15 @@ export interface lineTypes {
 }
 export interface cardTypes {
   name: string;
-  number: number;
+  number: any;
+}
+
+export interface dashboardTypes {
+  dashboard: number | any;
+peakConcurrency: number;
+usersActiveThisMonth : number;
+usersActiveToday : number;
+usersOnline: number;
+  // Add more properties as needed
 }
 
