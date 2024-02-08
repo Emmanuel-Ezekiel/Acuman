@@ -1,7 +1,10 @@
-export { SidebarLogo } from "./logo";
-export { Dropdown } from "./logo";
-export { DownArrow } from "./logo";
-export { Refresh } from "./logo";
+export { SidebarLogo } from "./icons";
+export { Sort } from "./icons";
+export { Search } from "./icons";
+export { Option } from "./icons";
+export { Dropdown } from "./icons";
+export { DownArrow } from "./icons";
+export { Refresh } from "./icons";
 export { GetStarted } from "./sidebarIcons";
 export { Analytics } from "./sidebarIcons";
 export { Chat } from "./sidebarIcons";

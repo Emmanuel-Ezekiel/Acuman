@@ -1,10 +1,11 @@
 import { Api } from '../index';
 import handleError from './errorHandler';
 
-export const fetchMessagesFromServer = async () => {
+export const fetchMessagesFromServer = async (page: number, postPerPage: number) => {
     try {
-      const result = await Api.get(`/messages?page=${3}&limit=${5}`);
-      return {data: result};
+      const result = await Api.get(`/messages?page=${page}&limit=${postPerPage}`);
+      // console.log(result)
+      return {data: result?.data};
     } catch (error) {
       return handleError(error);
     }

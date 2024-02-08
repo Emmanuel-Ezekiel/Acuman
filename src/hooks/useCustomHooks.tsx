@@ -2,12 +2,17 @@ import React from "react";
 import {
   fetchDashboardFromServer,
   fetchChatDashboardFromServer,
+  fetchMessagesFromServer,
 } from "@/services/api/apis";
 import { AnalyticsTypes, chatTypes } from "@/constants/types";
 const UseCustomHooks = () => {
   const [data, setData] = React.useState<AnalyticsTypes>();
   const [chatData, setChatData] = React.useState<chatTypes>();
+  const [tableData, setTableData] = React.useState<any>();
   const [loading, setLoading] = React.useState<boolean>(false);
+  const [page, setPage] = React.useState(1);
+  const [postPerPage] = React.useState(5);
+  const [totalPages, setTotalPages] = React.useState(1);
 
   const [error, setError] = React.useState({
     Dashboard: "",
@@ -22,7 +27,7 @@ const UseCustomHooks = () => {
     setLoading(false);
   };
 
-    //  get Chat Dashboard data
+  //  get Chat Dashboard data
   const fetchChatDashboard = async () => {
     setLoading(true);
     const { error, data }: any = await fetchChatDashboardFromServer();
@@ -31,12 +36,41 @@ const UseCustomHooks = () => {
     setLoading(false);
   };
 
+  const fetchMessages = async () => {
+    // setLoading(true);
+    const { error, data }: any = await fetchMessagesFromServer(
+      page,
+      postPerPage
+    );
+    // console.log("table", data)
+    if (error) setError(error);
+    else setTableData(data?.data);
+    setTotalPages(data?.totalPages);
+    // setLoading(false);
+  };
+
   React.useEffect(() => {
     fetchUserAnalytics();
     fetchChatDashboard();
   }, []);
 
-  return { data, fetchUserAnalytics, loading, setLoading, chatData };
+  React.useEffect(() => {
+    fetchMessages();
+  }, [page]);
+
+  return {
+    data,
+    fetchUserAnalytics,
+    loading,
+    setLoading,
+    chatData,
+    tableData,
+    setPage,
+    postPerPage,
+    page,
+    totalPages,
+    setTableData,
+  };
 };
 
 export default UseCustomHooks;

@@ -4,10 +4,25 @@ import React from "react";
 import MessageCard from "./components/messageCard";
 import UseCustomHooks from "@/hooks/useCustomHooks";
 import SkeletonCard from "@/components/skeleton/SkeletonCard";
+import Table from "./components/table";
+import Pagination from "./components/pagination";
+import TabContainer from "./components/tabContainer";
 const Chat = () => {
-  const { chatData, loading } = UseCustomHooks();
+  const { chatData, loading, setPage, page, tableData, totalPages } =
+    UseCustomHooks();
+  const [activeTab, setActiveTab] = React.useState("tab1");
+  const [searchTerm, setSearchTerm] = React.useState<string>("");
+ 
 
-  console.log(chatData);
+  const handleSearchChange = (input: string) => {
+    const filteredInput = input.replace(/[^a-zA-Z]/g, ""); // Remove non-letter characters
+    setSearchTerm(filteredInput);
+  };
+
+  // Function to handle tab click
+  const handleTabClick = (tab: string) => {
+    setActiveTab(tab);
+  };
 
   return (
     <main className="chat">
@@ -31,9 +46,21 @@ const Chat = () => {
         </div>
       )}
 
-      <div className="Tab">
-        
-      </div>
+      <TabContainer
+        activeTab={activeTab}
+        handleTabClick={handleTabClick}
+        searchTerm={searchTerm}
+        handleSearchChange={handleSearchChange}
+      />
+
+      {activeTab === "tab1" && (
+        <div className="table-container">
+          <Table data={tableData} searchTerm={searchTerm} />
+
+          <Pagination setPage={setPage} postPerPage={totalPages} page={page} />
+        </div>
+      )}
+      {activeTab === "tab2" && <div></div>}
     </main>
   );
 };
