@@ -11,8 +11,6 @@ aside {
     align-items: flex-start;
     width: 204px;
     margin-left: 17px;
-    // padding-left: 17px;
-    // border: 1px solid;
 
     .Logo_Box {
       display: flex;
@@ -36,7 +34,6 @@ aside {
       justify-content: center;
       border-radius: 50%;
       background-color: #f5f7fc;
-      //   border: 1px solid #f5f7fc;
     }
   }
 
@@ -56,12 +53,6 @@ aside {
       line-height: 24px;
       color: #9999bc;
       font-weight: 400;
-
-      //   svg {
-      //     path {
-      //       fill: #ea8d51;
-      //     }
-      //   }
     }
 
     .clicked-item {
@@ -85,9 +76,6 @@ aside {
   .line {
     width: 212px;
     border: 1px solid rgba(211, 215, 234, 0.4);
-
-    // border: 1px solid  #D3D7EA;
-    // opacity: 0.4px;
   }
 
   .bottomSidebar {
@@ -105,12 +93,6 @@ aside {
       font-size: 16px;
       line-height: 24px;
       font-weight: 400;
-
-      //   svg {
-      //     path {
-      //       fill: #ea8d51;
-      //     }
-      //   }
     }
   }
 }

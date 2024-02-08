@@ -4,6 +4,7 @@ import React, { useState } from "react";
 import { SidebarLogo, Dropdown } from "@/assets/svgs";
 import { SiderBarData, SiderBarData2 } from "@/constants/sidebarData";
 import { Line } from "../Line";
+import Link from "next/link";
 
 const Sidebar = () => {
   const [selectedItem, setSelectedItem] = useState<number | null>(1);
@@ -31,14 +32,16 @@ const Sidebar = () => {
 
       <ul>
         {SiderBarData.map((item) => (
-          <li
-            key={item.id}
-            className={selectedItem === item.id ? "clicked-item" : "item"}
-            onClick={() => handleItemClick(item.id)}
-          >
-            {item.icon}
-            {item.name}
-          </li>
+          <Link href={item.link}>
+            <li
+              key={item.id}
+              className={selectedItem === item.id ? "clicked-item" : "item"}
+              onClick={() => handleItemClick(item.id)}
+            >
+              {item.icon}
+              {item.name}
+            </li>
+          </Link>
         ))}
       </ul>
 

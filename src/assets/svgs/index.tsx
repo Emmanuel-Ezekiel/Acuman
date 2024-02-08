@@ -1,6 +1,7 @@
 export { SidebarLogo } from "./logo";
 export { Dropdown } from "./logo";
 export { DownArrow } from "./logo";
+export { Refresh } from "./logo";
 export { GetStarted } from "./sidebarIcons";
 export { Analytics } from "./sidebarIcons";
 export { Chat } from "./sidebarIcons";
