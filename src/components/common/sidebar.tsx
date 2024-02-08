@@ -32,9 +32,8 @@ const Sidebar = () => {
 
       <ul>
         {SiderBarData.map((item) => (
-          <Link href={item.link}>
+          <Link href={item.link} key={item.id}>
             <li
-              key={item.id}
               className={selectedItem === item.id ? "clicked-item" : "item"}
               onClick={() => handleItemClick(item.id)}
             >
