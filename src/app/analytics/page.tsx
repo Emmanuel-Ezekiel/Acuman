@@ -16,7 +16,7 @@ const Page = () => {
       <LastUpdate />
 
       {loading ? (
-        <SkeletonCard />
+        <SkeletonCard number={5} />
       ) : (
         <div className="card_container">
           <UserCard name={"USERS ONLINE"} number={data?.usersOnline} />

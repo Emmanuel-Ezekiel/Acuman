@@ -2,11 +2,15 @@ import React from "react";
 import Skeleton from "react-loading-skeleton";
 import "react-loading-skeleton/dist/skeleton.css";
 
-const SkeletonCard = () => {
+interface props {
+  number: number
+}
+
+const SkeletonCard = ({number}: props) => {
   return (
     <div className="card_container">
-      {Array(5)
-        .fill(5)
+      {Array(number)
+        .fill(number)
         .map((_, index) => (
           <div className="card" key={index}>
             <Skeleton height={25} width={90} />

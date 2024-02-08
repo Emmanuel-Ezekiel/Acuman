@@ -8,7 +8,8 @@ export const fetchMessagesFromServer = async () => {
     } catch (error) {
       return handleError(error);
     }
-  };
+};
+
 
 export const fetchDashboardFromServer = async () => {
     try {
@@ -32,7 +33,7 @@ export const fetchDashboardFromServer = async () => {
   export const fetchChatDashboardFromServer = async () => {
     try {
       const result = await Api.get('/chat_dashboard'); 
-      return {data: result};
+      return {data: result?.data?.data};
     } catch (error) {
       return handleError(error);
     }

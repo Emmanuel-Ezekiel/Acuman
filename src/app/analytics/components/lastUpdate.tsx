@@ -5,10 +5,10 @@ import UseCustomHooks from "@/hooks/useCustomHooks";
 
 const LastUpdate = () => {
   const [lastUpdated, setLastUpdated] = useState<Date>(new Date());
-  const { fetchDashboard, setLoading } = UseCustomHooks();
+  const { fetchUserAnalytics, setLoading } = UseCustomHooks();
 
   const handleRefresh = async () => {
-    await fetchDashboard(); // Assuming fetchDashboard is a function that fetches data
+    await fetchUserAnalytics(); // Assuming fetchDashboard is a function that fetches data
     setLastUpdated(new Date());
 
   };

@@ -2,6 +2,12 @@ export const bytesToGigabytes = (bytes: any) => {
     return Math.round(bytes / (1024 * 1024 * 1024));
 };
 
+
+export const bytesToMegabytes = (bytes: number) => {
+  return (bytes / (1024 * 1024)).toFixed(1);
+};
+
+
 export const calculateTimeAgo = (date: Date) => {
     const seconds = Math.floor((new Date().getTime() - date.getTime()) / 1000);
     if (seconds < 60) {

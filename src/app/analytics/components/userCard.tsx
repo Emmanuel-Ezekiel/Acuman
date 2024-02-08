@@ -1,11 +1,8 @@
 import React from "react";
 import { cardTypes } from "@/constants/types";
 import { bytesToGigabytes } from "@/utils/helpers";
-import SkeletonCard from "@/components/skeleton/SkeletonCard";
-import UseCustomHooks from "@/hooks/useCustomHooks";
 
 const UserCard = ({ name, number }: cardTypes) => {
-  const {  loading } = UseCustomHooks();
 
   let displayNumber;
 
