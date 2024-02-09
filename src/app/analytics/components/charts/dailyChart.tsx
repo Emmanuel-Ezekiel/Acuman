@@ -13,13 +13,6 @@ const DailyChart = ({color}: any) => {
     // Set your chart options here
     const options = {
       chart: {
-        // sparkline: {
-        //     enabled: false,
-        // },
-        // height: 'auto',
-        //   sparkline: {
-        //     enabled: true
-        //  },
         stacked: true,
         toolbar: {
           show: false,
@@ -73,7 +66,6 @@ const DailyChart = ({color}: any) => {
       },
     };
     setChartOptions(options);
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   const series = [
@@ -83,9 +75,7 @@ const DailyChart = ({color}: any) => {
     },
   ];
 
-  return typeof window !== "undefined" ? (
-    // <div className="apex">
-    // <div className="apex">
+  return typeof window !== "undefined" ? (  
     <ReactApexChart
       options={chartOptions}
       series={series}

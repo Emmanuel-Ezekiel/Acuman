@@ -36,6 +36,8 @@ const UseCustomHooks = () => {
     setLoading(false);
   };
 
+
+  // Function to handle all Messages
   const fetchMessages = async () => {
     // setLoading(true);
     const { error, data }: any = await fetchMessagesFromServer(

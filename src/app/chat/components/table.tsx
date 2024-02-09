@@ -10,12 +10,14 @@ const Table = ({ data, searchTerm, handleModal }: any) => {
   const [selectedItem, setSelectedItem] = React.useState(null);
   const [isModalOpen, setIsModalOpen] = React.useState(false);
 
+  // Function to handle item click
   const handleItemClick = (item: any) => {
     setSelectedItem(item);
     setIsModalOpen(!isModalOpen);
     // Open modal here
   };
 
+  // Filter the data based on search term
   const filteredData = data?.filter((item: any) =>
     item?.full_name?.toLowerCase().includes(searchTerm.toLowerCase())
   );

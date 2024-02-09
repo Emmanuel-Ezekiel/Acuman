@@ -7,6 +7,7 @@ const LastUpdate = () => {
   const [lastUpdated, setLastUpdated] = useState<Date>(new Date());
   const { fetchUserAnalytics, setLoading } = UseCustomHooks();
 
+  // Function to handle refresh
   const handleRefresh = async () => {
     await fetchUserAnalytics(); // Assuming fetchDashboard is a function that fetches data
     setLastUpdated(new Date());

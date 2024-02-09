@@ -23,29 +23,34 @@ const MessageForm = () => {
   const [active, setActive] = useState<boolean>(false);
   const [active2, setActive2] = useState<boolean>(false);
 
+  // Function to handle input change
   const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
     setFormData({ ...formData, [name]: value });
   };
 
+  // Function to handle form submission
   const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     // Handle form submission here
     console.log(formData);
   };
 
+  // Function to toggle the active state of the first dropdown
   const select = () => {
     setActive(!active);
   };
-
+// Function to toggle the active state of the second dropdown
   const select2 = () => {
     setActive2(!active2);
   };
 
+// Function to handle selecting a message option  
   const handleMessage = (name: string) => {
     setSelected({ ...selected, message: name });
   };
 
+  // Function to handle selecting a media storage option
   const handleMedia = (name: string) => {
     setSelected({ ...selected, mediaStorage: name });
   };
