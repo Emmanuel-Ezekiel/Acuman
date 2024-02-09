@@ -1,5 +1,9 @@
 export { SidebarLogo } from "./icons";
 export { Sort } from "./icons";
+export { ArrowDown } from "./icons";
+export { Close } from "./icons";
+export { Eye } from "./icons";
+export { Cancel } from "./icons";
 export { Search } from "./icons";
 export { Option } from "./icons";
 export { Dropdown } from "./icons";

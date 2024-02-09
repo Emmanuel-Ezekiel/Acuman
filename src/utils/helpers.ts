@@ -20,3 +20,10 @@ export const calculateTimeAgo = (date: Date) => {
     const hours = Math.floor(minutes / 60);
     return `${hours} hour${hours !== 1 ? "s" : ""} ago`;
   };
+
+    
+ export  function capitalizeFirstLetter(str: string) {
+    return str.replace(/\b\w/g, function (l: string) {
+      return l.toUpperCase();
+    });
+  }

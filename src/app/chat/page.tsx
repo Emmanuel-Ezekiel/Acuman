@@ -7,16 +7,21 @@ import SkeletonCard from "@/components/skeleton/SkeletonCard";
 import Table from "./components/table";
 import Pagination from "./components/pagination";
 import TabContainer from "./components/tabContainer";
+import FilterModal from "./components/filterModal";
 const Chat = () => {
   const { chatData, loading, setPage, page, tableData, totalPages } =
     UseCustomHooks();
   const [activeTab, setActiveTab] = React.useState("tab1");
   const [searchTerm, setSearchTerm] = React.useState<string>("");
- 
+  const [modalOpen, setModalOpen] = React.useState(false);
 
   const handleSearchChange = (input: string) => {
     const filteredInput = input.replace(/[^a-zA-Z]/g, ""); // Remove non-letter characters
     setSearchTerm(filteredInput);
+  };
+
+  const handleModal = () => {
+    setModalOpen(!modalOpen);
   };
 
   // Function to handle tab click
@@ -25,43 +30,57 @@ const Chat = () => {
   };
 
   return (
-    <main className="chat">
-      {loading ? (
-        <SkeletonCard number={4} />
-      ) : (
-        <div className="card_container">
-          <MessageCard name={"NO OF USERS"} number={chatData?.numberOfUsers} />
-          <MessageCard
-            name={"TOTAL MESSAGE SENT"}
-            number={chatData?.totalMessagesSent}
-          />
-          <MessageCard
-            name={"TOTAL MEDIA STORAGE USED"}
-            number={chatData?.totalStorageUsed}
-          />
-          <MessageCard
-            name={"TOTAL MEDIA SENT"}
-            number={chatData?.totalMediaSent}
-          />
-        </div>
-      )}
+    <>
+      <main className="chat">
+        {loading ? (
+          <SkeletonCard number={4} />
+        ) : (
+          <div className="card_container">
+            <MessageCard
+              name={"NO OF USERS"}
+              number={chatData?.numberOfUsers}
+            />
+            <MessageCard
+              name={"TOTAL MESSAGE SENT"}
+              number={chatData?.totalMessagesSent}
+            />
+            <MessageCard
+              name={"TOTAL MEDIA STORAGE USED"}
+              number={chatData?.totalStorageUsed}
+            />
+            <MessageCard
+              name={"TOTAL MEDIA SENT"}
+              number={chatData?.totalMediaSent}
+            />
+          </div>
+        )}
 
-      <TabContainer
-        activeTab={activeTab}
-        handleTabClick={handleTabClick}
-        searchTerm={searchTerm}
-        handleSearchChange={handleSearchChange}
-      />
+        <TabContainer
+          activeTab={activeTab}
+          handleTabClick={handleTabClick}
+          searchTerm={searchTerm}
+          handleSearchChange={handleSearchChange}
+        />
 
-      {activeTab === "tab1" && (
-        <div className="table-container">
-          <Table data={tableData} searchTerm={searchTerm} />
+        {activeTab === "tab1" && (
+          <div className="table-container">
+            <Table
+              data={tableData}
+              searchTerm={searchTerm}
+              handleModal={handleModal}
+            />
 
-          <Pagination setPage={setPage} postPerPage={totalPages} page={page} />
-        </div>
-      )}
-      {activeTab === "tab2" && <div></div>}
-    </main>
+            <Pagination
+              setPage={setPage}
+              postPerPage={totalPages}
+              page={page}
+            />
+          </div>
+        )}
+        {activeTab === "tab2" && <div></div>}
+      </main>
+      {modalOpen && <FilterModal setOpenModal={handleModal} />}
+    </>
   );
 };
 
