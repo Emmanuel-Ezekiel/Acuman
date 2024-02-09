@@ -24,7 +24,7 @@ const Table = ({ data, searchTerm, handleModal }: any) => {
     <table>
       <thead>
         <tr>
-          {TableData.map((item) => (
+          {TableData.map((item: any) => (
             <th key={item.id} onClick={handleModal}>
               {item.name} {item.icon}
             </th>
@@ -34,16 +34,16 @@ const Table = ({ data, searchTerm, handleModal }: any) => {
       <tbody>
         {filteredData?.map((item: any, index: number) => {
           return (
-            <React.Fragment>
-              <tr key={index}>
+            <React.Fragment key={index}>
+              <tr>
                 <td>{capitalizeFirstLetter(item?.full_name)}</td>
                 <td>{item.message_sent}</td>
                 <td>{bytesToMegabytes(item.media_storage_used)} MB</td>
                 <td>{moment(item.date_created).format("DD MMM, YYYY")}</td>
                 <td>{item.media_sent}</td>
                 <td onClick={() => handleItemClick(item)}>{Option()}</td>
-                {selectedItem === item && isModalOpen && <Modal />}
               </tr>
+              {selectedItem === item && isModalOpen && <Modal />}
             </React.Fragment>
           );
         })}
