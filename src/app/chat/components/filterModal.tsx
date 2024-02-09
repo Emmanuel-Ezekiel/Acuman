@@ -24,7 +24,7 @@ const FilterModal = ({ setOpenModal }: props) => {
       <div className="modalContainer">
         <div className="modalBox">
           <div className="title">
-            <h2>FIlter Table</h2>
+            <h2>Filter Table</h2>
             <div onClick={setOpenModal}>
               <Close />
             </div>

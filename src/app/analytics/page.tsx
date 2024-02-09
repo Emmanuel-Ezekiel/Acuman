@@ -6,7 +6,8 @@ import { Line } from "@/components/Line";
 import UseCustomHooks from "@/hooks/useCustomHooks";
 import LastUpdate from "./components/lastUpdate";
 import SkeletonCard from "@/components/skeleton/SkeletonCard";
-import GraphCard from "./components/graphCard";
+import GraphCard from "./components/dailyGraphCard";
+import MonthltGraphCard from "./components/monthlyGraphCard";
 
 const Page = () => {
   const { data, loading } = UseCustomHooks();
@@ -41,7 +42,7 @@ const Page = () => {
 
       <div className="graph_container">
         <GraphCard />
-        <GraphCard />
+        <MonthltGraphCard  />
       </div>
     </main>
   );
