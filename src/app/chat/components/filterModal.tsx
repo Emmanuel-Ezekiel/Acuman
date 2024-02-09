@@ -5,11 +5,12 @@ import MessageForm from "./messageForm";
 
 interface props {
   setOpenModal: any;
+  data: any;
 }
 
 type ButtonId = string | number;
 
-const FilterModal = ({ setOpenModal }: props) => {
+const FilterModal = ({ setOpenModal, data }: props) => {
   const [selectedButton, setSelectedButton] = React.useState<ButtonId | null>(
     'btn1'
   ); // State to track the selected button

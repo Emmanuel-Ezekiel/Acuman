@@ -79,7 +79,7 @@ const Chat = () => {
         )}
         {activeTab === "tab2" && <div></div>}
       </main>
-      {modalOpen && <FilterModal setOpenModal={handleModal} />}
+      {modalOpen && <FilterModal setOpenModal={handleModal} data={tableData} />}
     </>
   );
 };

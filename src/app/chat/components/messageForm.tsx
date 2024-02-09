@@ -55,22 +55,22 @@ const MessageForm = () => {
       <form onSubmit={handleSubmit}>
         <div className="dateGroup">
           <div className="date">
-            <label htmlFor="firstName">Date From</label>
+            <label htmlFor="dateFrom">Date From</label>
             <input
               type="date"
-              id="firstName"
-              name="firstName"
+              id="dateFrom"
+              name="dateFrom"
               value={formData.firstName}
               onChange={handleChange}
               required
             />
           </div>
           <div className="date">
-            <label htmlFor="lastName">Date To</label>
+            <label htmlFor="dateTo">Date To</label>
             <input
               type="date"
-              id="lastName"
-              name="lastName"
+              id="dateTo"
+              name="dateTo"
               value={formData.lastName}
               onChange={handleChange}
               required
